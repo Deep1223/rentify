@@ -1,0 +1,39 @@
+/* src/PropertyInfo.css */
+.property-info-container {
+    background-color: #f8f9fa;
+}
+
+.property-info-text h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.property-info-text p {
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.property-info-text ul {
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.property-info-text ul li {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.property-info-text ul li strong {
+    font-weight: bold;
+}
+
+.property-info-text button {
+    background-color: #d1a17a;
+    border: none;
+}
+
+.property-info-text button:hover {
+    background-color: #b58860;
+}

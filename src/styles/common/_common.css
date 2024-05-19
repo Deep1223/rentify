@@ -1,0 +1,8 @@
+a {
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+.custom-margin-70 {
+    margin-top: 70px;
+}

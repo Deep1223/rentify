@@ -1,25 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, BrowserRouter as Router, Routes, useLocation } from "react-router-dom";
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import './styles/common/_header.css';
+import './styles/common/_common.css';
+import Register from './pages/register';
+import Login from './pages/login';
+import Seller from './pages/seller';
+import Header from './common/header';
+import Footer from './common/footer';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className='App' style={{ backgroundColor: "#f2f2f2" }}>
+    <Router>
+      <AppContent />
+    </Router>
+    </div> 
+  );
+}
+
+
+const AppContent: React.FC = () => {
+  const location = useLocation();
+  const hideHeaderFooterRoutes = ['/login', '/register'];
+
+  const shouldHideHeaderFooter = hideHeaderFooterRoutes.includes(location.pathname);
+
+  return (
+    <>
+      {!shouldHideHeaderFooter && <Header />}
+      <Routes>
+          <Route path="/" element={<Seller />} />
+          <Route path="/seller" element={<Seller />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+      </Routes>
+      {!shouldHideHeaderFooter && <Footer />}
+    </>
   );
 }
 
